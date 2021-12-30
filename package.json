@@ -1,0 +1,29 @@
+{
+  "name": "elecron_webviewer",
+  "version": "1.0.0",
+  "description": "webviewer client",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"homehubWebView\"",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --prune=true --out=release-builds",
+    "package-rpi": "electron-packager . --overwrite --platform=linux --arch=arm64 --prune=true --out=release-builds",
+    "create-installer-mac": "electron-installer-dmg ./release-builds/Electron\\ webview-darwin-x64/Electron\\ webview.app electron-webview --out=release-builds --overwrite --icon=assets/icons/mac/icon.icns"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aortizgu/elecron_webviewer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aortizgu/elecron_webviewer/issues"
+  },
+  "homepage": "https://github.com/aortizgu/elecron_webviewer#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^16.0.5",
+    "electron-packager": "^15.4.0"
+  }
+}
